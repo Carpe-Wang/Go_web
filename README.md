@@ -22,4 +22,11 @@ func sayhelloName(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello astaxie!") //这个写入到w的是输出到客户端的
 }
 ```
+
+其中方法中的```w http.ResponseWriter, r *http.Request```
+
+w：服务器端需要传输给客户的相关信息写入
+
+r：客户端请求服务器携带的参数，如：请求类型(get,post,updata,delete)
+
 进行我们所需要的业务逻辑。
