@@ -58,3 +58,19 @@ Listen Socket接受客户端的请求, 得到Client Socket, 接下来通过Clien
 处理客户端的请求, 首先从Client Socket读取HTTP请求的协议头, 如果是POST方法, 还可能要读取客户端提交的数据, 
 然后交给相应的handler处理请求, handler处理完毕准备好客户端需要的数据, 通过Client Socket写给客户端。
 ```
+# demo02
+
+相对于demo而言多了一个相对应的页面解析和处理不同的业务逻辑请求
+```
+func login(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("method:", r.Method) //获取请求的方法
+	if r.Method == "GET" {
+		t, _ := template.ParseFiles("login.gtpl")
+		log.Println(t.Execute(w, nil))
+	} else {
+		//请求的是登录数据，那么执行登录的逻辑判断
+		fmt.Println("username:", r.Form["username"])
+		fmt.Println("password:", r.Form["password"])
+	}
+}
+```
