@@ -81,15 +81,14 @@ return false
 有些时候黑客可能会伪造这个下拉菜单不存在的值发送给你，那么如何判断这个值是否是我们预设的值呢？
 
 
-
 ```html
-
 <select name="fruit">
 <option value="apple">apple</option>
 <option value="pear">pear</option>
 <option value="banana">banana</option>
 </select>
 ```
+    
     
 ```go
 slice:=[]string{"apple","pear","banana"}
