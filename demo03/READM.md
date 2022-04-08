@@ -90,8 +90,8 @@ return false
 <option value="banana">banana</option>
 </select>
 ```
+    
 ```go
-
 slice:=[]string{"apple","pear","banana"}
 v := r.Form.Get("fruit")
 for _, item := range slice {
